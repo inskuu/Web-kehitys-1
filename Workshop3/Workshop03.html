@@ -26,6 +26,7 @@
       function otsikonVari() {
         const otsikko = document.querySelector("#otsikko1");
         otsikko.style.color = "red";
+        otsikko.innerHTML = "Bye bye mouse!";
       }
     </script>
 
@@ -249,7 +250,7 @@
         background: #fafafa;
       "
     >
-      (Esikatselu tulee tähän)
+    (Esikatselu tulee tähän)
     </div>
 
     <hr />
@@ -338,6 +339,21 @@ window.location.href = url;
     </div>
 
     <p id="keyinfo"></p>
+
+    <script>
+      //Harjoitus 5
+  const painettunappain = document.querySelector("#keyinfo");
+
+  document.addEventListener("keydown", function(event) {
+    console.log(event);
+    painettunappain.innerHTML = `
+      Viimeksi painettu näppäin: <strong>${event.key}</strong><br>
+      Näppäimen koodi: <strong>${event.code}</strong><br>
+    `;
+    keybox.innerHTML = `
+    <h1>${event.key}</h1><br>`
+  });
+</script>
 
     <ul>
       <li>Lisää <code>keydown</code>-kuuntelija dokumentille.</li>
