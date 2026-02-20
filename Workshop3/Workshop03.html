@@ -299,11 +299,12 @@ window.location.href = url;
     <hr />
     <script>
         //Harjoitus 4
+        function sijainti () {
       if ("geolocation" in navigator) { 
         navigator.geolocation.getCurrentPosition(
   (position) => {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
 
         console.log("Latitude:", lat);
         console.log("Longitude:", lon);
@@ -319,8 +320,12 @@ window.location.href = url;
     console.log("Geolocation ei ole käytettävissä tässä selaimessa.");
     alert("Geolocation ei ole käytettävissä tässä selaimessa.");
   }
+        }
+
 
     </script>
+
+<button onclick="sijainti()">Hae sijainti</button>
 
     <!-- Harjoitus 5 -->
     <h2>Harjoitus 5</h2>
