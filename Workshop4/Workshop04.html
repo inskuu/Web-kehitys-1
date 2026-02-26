@@ -300,8 +300,8 @@
 				document.querySelector("#sisalto").style.display = "initial"
 			}
 
-			nappi1.addEventListener("click", piilota);
-			nappi2.addEventListener("click", nayta);
+			nappi1.addEventListener("click", nayta);
+			nappi2.addEventListener("click", piilota);
 		</script>
 					
 			<script>
@@ -385,7 +385,16 @@
 	}
 
 </script>
-			
+	<script>
+	//Bonustehtävät
+	//Valitse div, jonka id on "carimage" ja siirrä se 200px vasemmalle ja 500px alaspäin.
+	function changePosition () {
+		kuva = document.querySelector("#carimage");
+		kuva.style.position = "absolute";
+		kuva.style.left = "200px";
+		kuva.style.down = "500px";
+	}
+	</script>	
 </body>
 
 </html>
