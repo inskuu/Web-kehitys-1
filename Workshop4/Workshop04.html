@@ -17,37 +17,8 @@
 	</p>
 	<p>
 		<button onclick="changeHeading();">Painike 1</button>
-		<script>
-			//Harjoitus 1.1
-			document.querySelector("#painike1").addEventListener("click", changeHeading);
-
-			function changeHeading() {
-				painike1.innerHTML = "Muokattu otsikko!";
-			}
-		</script>
 		<button onclick="secondButton()">Painike 2</button>
-		<script>
-			//Harjoitus 1.2
-			document.querySelector("#painike2").addEventListener("click", secondButton);
-
-			function secondButton() {
-				painike2.style.color = "black";
-				painike2.style.fontSize = "xx-large";
-				painike2.style.fontStyle = "italic";
-				painike2.style.backgroundColor = "lightblue";
-			}
-
-		</script>
 		<button id="painike3" onclick="thirdButton()">Painike 3</button>
-		<script>
-			//Harjoitus 1.3
-			document.querySelector("#painike3").addEventListener("click", thirdButton);
-			
-			function thirdButton() {
-				document.querySelector("#teksti").innerHTML = '<strong>"Pieni perhonen </strong> lähti matkaan innolla. Se ei pelännyt maailmaa, ei rosoisia kiviä. Se tahtoi vain lentää, elää ihanan perhosen elämän."<br><br>';				
-			}
-		</script>
-
 	</p>
 
 	<ul>
@@ -116,6 +87,7 @@
 				reunus. Kun hiiri poistuu, reunus katoaa.
 			</li>
 		</ul>
+
 		<p>Valitse uusi auto listasta.</p>
 		<select name="mySelect" id="mySelect" onchange="">
 			<option value="BMW">BMW</option>
@@ -129,34 +101,6 @@
 			src="https://www.bmw.fi/content/dam/bmw/common/all-models/m-series/m8-coupe/2022/navigation/bmw-8series-coupe-modellfinder.png"
 			width="400" id="carimage" />
 		
-			
-			<script>
-				//Harjoitus 3
-				document.querySelector("#mySelect").addEventListener("change", alasvetoValikko);
-
-				function alasvetoValikko () {
-					let valinta = document.querySelector("#mySelect").value;
-				alert(valinta);
-
-				let kuva = document.querySelector("#carimage");
-					if (valinta ==="Audi") {
-					kuva.src="https://images.dealer.com/ddc/vehicles/2025/Audi/Q5/SUV/still/front-left/front-left-320-en_US.jpg?impolicy=resize&w=320";
-					}
-					if (valinta ==="Mercedes") {
-					kuva.src="https://www.mbusa.com/content/dam/mb-nafta/us/global-nav-new/vehicles/MY25-GLCCOUPE-CLASS-Resized.png";
-					}
-					if (valinta ==="Volvo") {
-					kuva.src="https://wizz.volvocars.com/images/2026/246/exterior/studio/standardizedSideView/transparent_exterior-studio-standardizedSideView_B6AF02715D08007BDC58547AA6FB3FA625421726.png?client=car-configurator&w=3840";
-					}
-					if (valinta === "BMW") {
-        			kuva.src = "https://www.bmw.fi/content/dam/bmw/common/all-models/m-series/m8-coupe/2022/navigation/bmw-8series-coupe-modellfinder.png";
-    				}
-
-			}
-			</script>
-			
-
-
 		<hr />
 		<h2>Tehtävä 4: Taulukot</h2>
 		<ul>
@@ -231,6 +175,7 @@
 
 		<hr />
 
+
 		<h2>Bonus-tehtävä: Siirrä elementtejä</h2>
 		<ul>
 			<li>
@@ -283,6 +228,164 @@
 				&lsquo;Select&rsquo;?
 			</li>
 		</ul>
+		<script>
+	//Harjoitus 1
+	//Ensimmäisen painikkeen tulisi suorittaa JavaScript-funktio, joka löytää viittauksen sivun "Tehtävä1 -otsikon ja muuttaa sen sisällön muotoon "Muokattu otsikko!".
+			document.querySelector("#painike1").addEventListener("click", changeHeading);
+
+			function changeHeading() {
+				painike1.innerHTML = "Muokattu otsikko!";
+			}
+		</script>
+			<script>
+	//Toisen painikkeen tulisi suorittaa funktio, joka muuttaa sivun "Tehtävä 2" -otsikon tyyliä. JavaScriptin tulee muuttaa vähintään fonttikokoa, tyyliä, väritystä sekä taustaväriä.
+			document.querySelector("#painike2").addEventListener("click", secondButton);
+
+			function secondButton() {
+				painike2.style.color = "black";
+				painike2.style.fontSize = "xx-large";
+				painike2.style.fontStyle = "italic";
+				painike2.style.backgroundColor = "lightblue";
+			}
+		</script>
+			<script>
+	//Kolmas painike lisää korvaa allaolevan Lorem Ipsum-tekstikappaleen sisällön jollain itse valitsemallasi tekstillä. Säilytä tekstin muotoilu.
+			document.querySelector("#painike3").addEventListener("click", thirdButton);
+			
+			function thirdButton() {
+				document.querySelector("#teksti").innerHTML = '<strong>"Pieni perhonen </strong> lähti matkaan innolla. Se ei pelännyt maailmaa, ei rosoisia kiviä. Se tahtoi vain lentää, elää ihanan perhosen elämän."<br><br>';				
+			}
+		</script>
+				<script>
+	//Harjoitus 2
+	//Etsi sivulta div-elementti, jonka id="sisalto" käyttäen document.querySelector-funtiota.
+			document.querySelector("#sisalto");
+
+	//Luo div-elementin sisälle uusi h3 - tägi jossa lukee "Etusivun uutinen"
+			let sisalto = document.querySelector("#sisalto");
+			let h3 = document.createElement("h3");
+  			h3.textContent = "Etusivun uutinen";
+ 			sisalto.appendChild(h3);
+			
+	//Tyylittele otsikko ainakin tekstin värin ja fontin osalta JavaScriptia käyttäen.
+			sisalto.style.color = "teal";
+			sisalto.style.fontStyle = "italic";
+
+	//Lisää saman div-elementin sisälle myös img-tägi. Määrittele sen .src-kenttään haluamasi kuvan url. Säädä kuvan koko .style-kentän avulla.
+			let img = document.createElement("img");
+			img.src = "https://static.vecteezy.com/system/resources/previews/050/002/650/non_2x/cute-fennec-peeking-isolated-on-white-background-free-photo.jpeg";
+			sisalto.appendChild(img);
+			img.style.width = "400px";
+
+	//Lisää kuvan alle, mutta DIV-lohkon ulkopuolelle, muutama nappi.
+			let napit = document.createElement("div");
+			napit.id = "napit";
+			sisalto.insertAdjacentElement("afterend", napit);
+
+			let nappi1 = document.createElement("button");
+			nappi1.textContent = "Näytä";
+			nappi1.style.marginRight = "5px";
+			napit.appendChild(nappi1);
+
+			let nappi2 = document.createElement("button");
+			nappi2.textContent = "Piilota";
+			napit.appendChild(nappi2);
+			
+	//Lisää nappeihin kuuntelijat Javascriptin avulla. Ensimmäinen nappi voisi piilottaa koko äsken luodun DIV-lohkon. Toinen voisi tuoda sen taas esiin.
+			function piilota() {
+			document.querySelector("#sisalto").style.display = "none";
+			}
+
+			function nayta() {
+				document.querySelector("#sisalto").style.display = "initial"
+			}
+
+			nappi1.addEventListener("click", piilota);
+			nappi2.addEventListener("click", nayta);
+		</script>
+					
+			<script>
+	//Harjoitus 3
+	//Kirjoita JavaScript-funktio, joka suoritetaan, kun alasvetovalikon valinta muuttuu (onchange-kuuntelija). Näytä käyttäjän valinta alert-ikkunassa.
+				document.querySelector("#mySelect").addEventListener("change", alasvetoValikko);
+
+				function alasvetoValikko () {
+					let valinta = document.querySelector("#mySelect").value; 
+				alert(valinta);
+
+	//Kun saat edellisen kohdan toimimaan, muokkaa koodia siten että automallin valinta alasvetovalikosta vaihtaa alla näkyvän kuvan toiseksi. 
+				let kuva = document.querySelector("#carimage");
+					if (valinta ==="Audi") {
+					kuva.src="https://images.dealer.com/ddc/vehicles/2025/Audi/Q5/SUV/still/front-left/front-left-320-en_US.jpg?impolicy=resize&w=320";
+					}
+					if (valinta ==="Mercedes") {
+					kuva.src="https://www.mbusa.com/content/dam/mb-nafta/us/global-nav-new/vehicles/MY25-GLCCOUPE-CLASS-Resized.png";
+					}
+					if (valinta ==="Volvo") {
+					kuva.src="https://wizz.volvocars.com/images/2026/246/exterior/studio/standardizedSideView/transparent_exterior-studio-standardizedSideView_B6AF02715D08007BDC58547AA6FB3FA625421726.png?client=car-configurator&w=3840";
+					}
+					if (valinta === "BMW") {
+        			kuva.src = "https://www.bmw.fi/content/dam/bmw/common/all-models/m-series/m8-coupe/2022/navigation/bmw-8series-coupe-modellfinder.png";
+    				}
+
+			}
+
+	//Rakenna kuvaan kuuntelija, joka saa aikaan sen että kun hiiri siirtyy kuvan päälle, kuvan ympärille tulee näkyä värillinen reunus. Kun hiiri poistuu, reunus katoaa.
+			document.querySelector("#carimage").addEventListener("mouseover", reunus);
+			document.querySelector("#carimage").addEventListener("mouseout", reunusPois);
+
+			function reunus() {
+			let kuva = document.querySelector("#carimage");
+			kuva.style.border = "5px solid teal"
+			}
+			
+			function reunusPois() {
+			let kuva = document.querySelector("#carimage");
+			kuva.style.border = "none"	
+			}
+
+			</script>
+			<script>
+	//Harjoitus 4
+	//Lue lomakkeen kentät ja tarkasta niiden sisällön oikeellisuus napin painalluksen (on click) jälkeen. Ilmoita käyttäjälle esim. alert-ikkunalla jos tuli virheitä.
+	document.querySelector("#Insert").addEventListener("click", lueRivi);
+
+	function lueRivi () {
+	let nimi = document.querySelector("#nimi").value;
+	let tehtava = document.querySelector("#tehtava").value;
+	let palkka = document.querySelector("#palkka").value;
+	console.log(nimi, tehtava, palkka);
+	
+	////Nimen tulee olla yli 5 merkkiä pitkä
+	if (nimi.length < 5) {
+		alert("Nimen tulee olla yli 5 merkkiä pitkä");
+	}
+	//Tehtävä kenttä ei saa olla tyhjä
+	if (tehtava === "") {
+		alert("Tehtävä kenttä ei saa olla tyhjä");
+	}
+	//Palkka kenttä pitää olla yli 0 
+	if (palkka < 0) {
+		alert("Palkan tulee olla suurempi kuin 0");
+	}
+
+	//Kun validointi toimii, kirjoita JavaScript-funktio joka lisää syötetyt arvot uutena rivinä allaolevaan taulukkoon.
+	lisaaRivi(nimi, tehtava, palkka);
+	}
+
+	function lisaaRivi() {
+		let taulukko = document.querySelector("#data");
+		let uusiRivi = taulukko.insertRow(-1);
+		let solu1 = uusiRivi.insertCell(0);
+		let solu2 = uusiRivi.insertCell(1);
+		let solu3 = uusiRivi.insertCell(2);
+		solu1.textContent = nimi.value;
+		solu2.textContent = tehtava.value;
+		solu3.textContent = palkka.value;
+	}
+
+</script>
+			
 </body>
 
 </html>
