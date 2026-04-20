@@ -18,7 +18,7 @@
 	<p>JSON tarkoittaa JavaScript Object Notationia, ja se tarkoittaa, että esittelemme datan muodossa, jonka JavaScript
 		ymmärtää sellaisenaan. Muunnoksia ei tarvita sen käyttämiseen.</p>
 	<p>
-		<button>Näytä vain etu- ja sukunimi</button>
+		<button id="nappi1">Näytä vain etu- ja sukunimi</button>
 		<button>Näytä kaikki tiedot</button>
 	</p>
 	<p>Kokeillaan seuraavaa. Voit luoda uuden JSON-datasetin JavaScript-koodissasi alla olevan mallin mukaisesti. Luo
@@ -30,12 +30,32 @@
 			'{ "firstName":"Anna" , "lastName":"Smith" },' +
 			'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
 		</pre>
+
 	<ul>
 		<li>Ensimmäinen painike näyttää etu- ja sukunimen jokaisesta kohteesta alla olevassa divissä.</li>
 		<li>Toinen painike näyttää kaikki tiedot kaikista kohteista alla olevassa divissä. Halutessasi voit käyttää
 			for-silmukoita tässä.</li>
 	</ul>
 	<div id="jsondata">JSON-data näkyy täällä.</div>
+			<script>
+			//Harjoitus 1
+			var text = '{ "employees" : [' +
+			'{ "firstName":"John" , "lastName":"Doe" },' +
+			'{ "firstName":"Anna" , "lastName":"Smith" },' +
+			'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+
+const tiedot = JSON.parse(text);
+document.querySelector("#nappi1").addEventListener("click", naytaNimet);
+
+			function naytaNimet() {
+				const jsondata = document.querySelector("#jsondata");
+				jsondata.innerHTML = "";
+				tiedot.employees.forEach(function(employee) {
+					jsondata.innerHTML += 
+					employee.firstName + " " + employee.lastName + "<br>";
+				});
+			}
+		</script>
 	<hr />
 	<h2>Harjoitus 2: JSONin parsiminen verkosta</h2>
 	<p>Alla näet kaksi painiketta. Muokkaa lähdekoodia ja lisää näihin painikkeisiin onClick-tapahtumat. Lisää
